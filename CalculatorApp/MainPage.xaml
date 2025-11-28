@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CalculatorApp.ViewModels;assembly=CalculatorApp.Core"
+             x:Class="CalculatorApp.MainPage">
+
+    <Grid RowDefinitions="2*,1*,1*,1*,1*,1*" ColumnDefinitions="*,*,*,*" Padding="15" RowSpacing="15" ColumnSpacing="15" BackgroundColor="{StaticResource CalculatorBackground}">
+        
+        <Label Text="{Binding Display}" 
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+               FontSize="80" HorizontalTextAlignment="End" VerticalTextAlignment="End"
+               TextColor="{StaticResource TextWhite}"
+               LineBreakMode="NoWrap" Margin="0,0,10,20"/>
+
+        <Button Text="C" Command="{Binding ClearCommand}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                BackgroundColor="{StaticResource ButtonFunction}" TextColor="{StaticResource TextBlack}" 
+                FontSize="32" CornerRadius="40" FontAttributes="Bold"/>
+        <Button Text="÷" Command="{Binding OperationCommand}" CommandParameter="/" Grid.Row="1" Grid.Column="3" 
+                BackgroundColor="{StaticResource ButtonOperator}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+
+        <Button Text="7" Command="{Binding NumberCommand}" CommandParameter="7" Grid.Row="2" Grid.Column="0" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="8" Command="{Binding NumberCommand}" CommandParameter="8" Grid.Row="2" Grid.Column="1" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="9" Command="{Binding NumberCommand}" CommandParameter="9" Grid.Row="2" Grid.Column="2" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="×" Command="{Binding OperationCommand}" CommandParameter="*" Grid.Row="2" Grid.Column="3" 
+                BackgroundColor="{StaticResource ButtonOperator}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+
+        <Button Text="4" Command="{Binding NumberCommand}" CommandParameter="4" Grid.Row="3" Grid.Column="0" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="5" Command="{Binding NumberCommand}" CommandParameter="5" Grid.Row="3" Grid.Column="1" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="6" Command="{Binding NumberCommand}" CommandParameter="6" Grid.Row="3" Grid.Column="2" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="-" Command="{Binding OperationCommand}" CommandParameter="-" Grid.Row="3" Grid.Column="3" 
+                BackgroundColor="{StaticResource ButtonOperator}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+
+        <Button Text="1" Command="{Binding NumberCommand}" CommandParameter="1" Grid.Row="4" Grid.Column="0" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="2" Command="{Binding NumberCommand}" CommandParameter="2" Grid.Row="4" Grid.Column="1" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="3" Command="{Binding NumberCommand}" CommandParameter="3" Grid.Row="4" Grid.Column="2" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="+" Command="{Binding OperationCommand}" CommandParameter="+" Grid.Row="4" Grid.Column="3" 
+                BackgroundColor="{StaticResource ButtonOperator}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+
+        <Button Text="0" Command="{Binding NumberCommand}" CommandParameter="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40"/>
+        <Button Text="." Command="{Binding DecimalCommand}" Grid.Row="5" Grid.Column="2" 
+                BackgroundColor="{StaticResource ButtonNumber}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+        <Button Text="=" Command="{Binding CalculateCommand}" Grid.Row="5" Grid.Column="3" 
+                BackgroundColor="{StaticResource ButtonOperator}" TextColor="{StaticResource TextWhite}" 
+                FontSize="36" CornerRadius="40" FontAttributes="Bold"/>
+
+    </Grid>
+
+</ContentPage>
